@@ -11,7 +11,34 @@ class Patterns{
         }
     void star_triangle();
     void star_triangle_without_space();
+    void diamond();
 };
+
+inline void Patterns::diamond(){
+    int n=this->n;
+    int m=n;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m-1;j++){
+            cout<<" ";
+        }
+        m-=1;
+        for(int k=0;k<=i;k++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+    m=0;
+    for(int i=n;i>0;i--){
+        for(int j=0;j<m;j++){
+            cout<<" ";
+        }
+        m+=1;
+        for(int k=0;k<i;k++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+}
 
 inline void Patterns::star_triangle_without_space(){
     int n=this->n;
@@ -44,6 +71,7 @@ int main(){
     cin>>val;
     Patterns obj(val);
     //obj.star_triangle();
-    obj.star_triangle_without_space();
+    //obj.star_triangle_without_space();
+    obj.diamond();
     return 0;
 }
